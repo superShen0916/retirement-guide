@@ -1,0 +1,18 @@
+{
+  "name": "虚构A：45岁退出全职，63岁开始领取假设养老金",
+  "start_age": 45,
+  "end_age": 95,
+  "assets": 3000000,
+  "annual_spending": 120000,
+  "real_return": 0.02,
+  "incomes": [
+    {
+      "label": "假设养老金",
+      "start_age": 63,
+      "end_age": 95,
+      "annual_amount": 60000
+    }
+  ],
+  "extra_expenses": [],
+  "events": []
+}

@@ -1,0 +1,37 @@
+{
+  "name": "虚构C：家庭阶段支出与照护",
+  "start_age": 50,
+  "end_age": 95,
+  "assets": 4000000,
+  "annual_spending": 144000,
+  "real_return": 0.02,
+  "incomes": [
+    {
+      "label": "家庭假设养老金合计",
+      "start_age": 63,
+      "end_age": 95,
+      "annual_amount": 96000
+    }
+  ],
+  "extra_expenses": [
+    {
+      "label": "阶段家庭支持",
+      "start_age": 50,
+      "end_age": 60,
+      "annual_amount": 60000
+    },
+    {
+      "label": "后期照护",
+      "start_age": 80,
+      "end_age": 95,
+      "annual_amount": 60000
+    }
+  ],
+  "events": [
+    {
+      "label": "搬家改造",
+      "age": 65,
+      "amount": 300000
+    }
+  ]
+}

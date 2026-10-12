@@ -1,0 +1,24 @@
+{
+  "name": "虚构B：半退休收入只持续十年",
+  "start_age": 40,
+  "end_age": 95,
+  "assets": 1800000,
+  "annual_spending": 96000,
+  "real_return": 0.02,
+  "incomes": [
+    {
+      "label": "已验证但不保证的劳动收入",
+      "start_age": 40,
+      "end_age": 50,
+      "annual_amount": 60000
+    },
+    {
+      "label": "假设养老金",
+      "start_age": 63,
+      "end_age": 95,
+      "annual_amount": 48000
+    }
+  ],
+  "extra_expenses": [],
+  "events": []
+}
