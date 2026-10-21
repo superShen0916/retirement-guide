@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlparse
 from reader_markdown import inline as render_inline, render as render_markdown
 
 ROOT = Path(__file__).resolve().parents[1]
-SCENARIOS = ['rest', 'savings', 'lighter-work', 'part-time', 'move-city', 'family']
+SCENARIOS = ['rest', 'savings', 'lighter-work', 'part-time', 'move-city', 'family', 'rural-parents']
 PAGES = ([ROOT / 'README.md', ROOT / 'docs/QUICKSTART.md', ROOT / 'docs/DECISIONS.md']
          + [ROOT / ('docs/' + name + '.md') for name in ['LIBRARY', 'CASEBOOK', 'RESEARCH-NOTES']
             if (ROOT / ('docs/' + name + '.md')).exists()]

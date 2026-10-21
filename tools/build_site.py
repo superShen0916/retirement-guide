@@ -66,7 +66,7 @@ def render_page(source, route):
     home = local_url('index.html', route)
     directory = local_url('book/README.html', route)
     related = ''.join('<a href="' + local_url('guides/' + name + '.html', route) + '">' + label + '</a>'
-                      for name, label in zip(SCENARIOS, ['休息三个月', '5/10/30万起步', '降薪换时间', '兼职与半退休', '换城市生活', '家庭责任']))
+                      for name, label in zip(SCENARIOS, ['休息三个月', '5/10/30万起步', '降薪换时间', '兼职与半退休', '换城市生活', '家庭责任', '父母在农村']))
     return ('<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1"><title>'
             + html.escape(title) + ' · 退休之前</title><meta name="description" content="'
@@ -118,9 +118,9 @@ def build(destination):
     (destination / 'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                                            + ''.join('<url><loc>' + ORIGIN + '/' + route + '</loc></url>' for route in urls)
                                            + '</urlset>', encoding='utf-8')
-    (destination / 'build-info.json').write_text(json.dumps({'version': '0.4.0', 'content_updated': '2026-10-21',
-        'original_source_review': '2026-10-12', 'new_evidence_review': '2026-10-21', 'decision_items': len(library['items']),
-        'fictional_cases': len(library['cases']), 'scenario_pages': 6, 'reading_pages': len(ROUTES)}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
+    (destination / 'build-info.json').write_text(json.dumps({'version': '0.5.0', 'content_updated': '2026-10-22',
+        'original_source_review': '2026-10-12', 'new_evidence_review': '2026-10-21', 'institutions_review': '2026-10-22', 'decision_items': len(library['items']),
+        'fictional_cases': len(library['cases']), 'scenario_pages': 7, 'reading_pages': len(ROUTES)}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print('Built website:', destination, '|', len(ROUTES), 'reading pages + calculator')
 
 
