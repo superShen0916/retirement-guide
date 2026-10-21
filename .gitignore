@@ -3,3 +3,7 @@ __pycache__/
 projection.csv
 private/
 .DS_Store
+dist/
+.deploy/
+.venv/
+work/

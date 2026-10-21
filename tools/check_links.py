@@ -6,6 +6,8 @@ from urllib.parse import urlparse
 root=Path(__file__).resolve().parents[1]
 errors=[]
 for p in root.rglob('*.md'):
+    if any(part in {'.git', '.venv', '.deploy', 'dist', 'private', 'work'} for part in p.relative_to(root).parts):
+        continue
     for url in re.findall(r'\[[^\]]*\]\(([^)]+)\)',p.read_text(encoding='utf-8')):
         if urlparse(url).scheme or url.startswith('#'):
             continue

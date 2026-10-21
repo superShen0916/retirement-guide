@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+  <title id="title">退休之前：普通人的工作退路指南</title>
+  <desc id="desc">为未来留余地，也给现在留生活。休息一阵、换种工作、慢慢退出，先把下一步算清楚。</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#FFFFFF" stroke-opacity=".045"/>
+    </pattern>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#153E38"/>
+      <stop offset="1" stop-color="#092C29"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="440" rx="20" fill="url(#ground)"/>
+  <rect width="1280" height="440" rx="20" fill="url(#grid)"/>
+  <g font-family="'Microsoft YaHei','PingFang SC',sans-serif">
+    <path d="M62 64h31" stroke="#D9EBAE" stroke-width="4"/>
+    <text x="109" y="70" fill="#B9D3C7" font-size="15" letter-spacing="3">RETIREMENT GUIDE</text>
+    <text x="60" y="166" fill="#FFFDF4" font-size="66" font-weight="700" letter-spacing="3">退休之前</text>
+    <text x="62" y="223" fill="#D9EBAE" font-size="28" font-weight="600">普通人的工作退路指南</text>
+    <text x="63" y="281" fill="#E3EAE2" font-size="21">为未来留余地，也给现在留生活。</text>
+    <path d="M63 316h545" stroke="#B8D1C2" stroke-opacity=".25"/>
+    <text x="63" y="359" fill="#B9D3C7" font-size="17">算清缓冲 · 比较选择 · 先试一小步</text>
+    <g transform="translate(750 60)">
+      <path d="M55 264V72M55 130h48M55 224h48" fill="none" stroke="#789F8D" stroke-width="2"/>
+      <circle cx="55" cy="72" r="7" fill="#D9EBAE"/>
+      <circle cx="55" cy="130" r="5" fill="#789F8D"/>
+      <circle cx="55" cy="224" r="5" fill="#789F8D"/>
+      <rect x="103" y="2" width="315" height="72" rx="12" fill="#F3F2DD"/>
+      <text x="126" y="31" fill="#587067" font-size="12" letter-spacing="1">01 / TAKE A BREAK</text>
+      <text x="126" y="58" fill="#183F36" font-size="23" font-weight="600">休息一阵</text>
+      <rect x="103" y="95" width="315" height="72" rx="12" fill="#E1EBDD"/>
+      <text x="126" y="124" fill="#587067" font-size="12" letter-spacing="1">02 / CHANGE YOUR WORK</text>
+      <text x="126" y="151" fill="#183F36" font-size="23" font-weight="600">换种工作</text>
+      <rect x="103" y="188" width="315" height="72" rx="12" fill="#CBDDD1"/>
+      <text x="126" y="217" fill="#587067" font-size="12" letter-spacing="1">03 / STEP BACK GRADUALLY</text>
+      <text x="126" y="244" fill="#183F36" font-size="23" font-weight="600">慢慢退出</text>
+      <text x="103" y="309" fill="#D9EBAE" font-size="17">下一步，由你选。</text>
+    </g>
+  </g>
+</svg>

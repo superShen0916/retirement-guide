@@ -47,4 +47,4 @@ A与C的基准路径没有缺口，并不意味着“已获准退休”；压力
 
 [返回目录](../README.md)
 '''
-(p/'docs/11-cases.md').write_text(text,encoding='utf-8')
+(p/'docs/11-cases.md').write_text(text,encoding='utf-8',newline='\n')
