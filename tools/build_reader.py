@@ -11,6 +11,8 @@ from reader_markdown import inline as render_inline, render as render_markdown
 ROOT = Path(__file__).resolve().parents[1]
 SCENARIOS = ['rest', 'savings', 'lighter-work', 'part-time', 'move-city', 'family']
 PAGES = ([ROOT / 'README.md', ROOT / 'docs/QUICKSTART.md', ROOT / 'docs/DECISIONS.md']
+         + [ROOT / ('docs/' + name + '.md') for name in ['LIBRARY', 'CASEBOOK', 'RESEARCH-NOTES']
+            if (ROOT / ('docs/' + name + '.md')).exists()]
          + [ROOT / f'docs/scenarios/{name}.md' for name in SCENARIOS
             if (ROOT / f'docs/scenarios/{name}.md').exists()]
          + sorted((ROOT / 'docs').glob('[0-9]*.md'))
@@ -72,10 +74,10 @@ def main():
     document = ('<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">'
                 '<meta name="viewport" content="width=device-width,initial-scale=1">'
                 '<title>退休之前 · 普通人的工作退路指南 · 完整阅读版</title><style>' + css
-                + '</style></head><body id="top"><header><small>RETIREMENT GUIDE · v0.3.0</small>'
-                '<h1>退休之前</h1><p>为未来留余地，也给现在留生活。<br>普通人的工作退路指南。</p>'
-                '<small>12章正文 · 6份场景指南 · 6份模板 · 内容更新 2026-10-21<br>'
-                '政策来源核查记录 2026-10-12；未宣称全部重新核查。</small></header>'
+                + '</style></head><body id="top"><header><small>RETIREMENT GUIDE · v0.4.0</small>'
+                '<h1>退休之前</h1><p>把钱、时间和生活一起算清楚。<br>为未来留余地，也给现在留生活。</p>'
+                '<small>决策资料库 · 十二个虚构账本 · 十二章正文 · 内容更新 2026-10-21<br>'
+                '新增来源核查2026-10-21；原来源保留各自登记日期，详见研究记录。</small></header>'
                 '<main><nav aria-label="章节目录">' + ''.join(nav) + '</nav><article>'
                 + ''.join(sections) + '</article></main><footer>正文与封面可离线阅读 · 无追踪 · 无外部字体或脚本</footer></body></html>')
     (ROOT / '阅读版.html').write_text(document + '\n', encoding='utf-8', newline='\n')

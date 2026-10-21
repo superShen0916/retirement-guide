@@ -16,10 +16,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: python tools/build_library.py
       - run: python -m unittest discover -s tests -v
-      - run: node --test tests/test_runway.mjs
+      - run: node --test tests/test_runway.mjs tests/test_lifetime.mjs
       - run: python tools/check_links.py
       - run: python tools/build_cases.py
       - run: python tools/build_reader.py
       - run: python tools/build_site.py
-      - run: git diff --exit-code -- docs/11-cases.md 阅读版.html
+      - run: git diff --exit-code -- docs/11-cases.md docs/LIBRARY.md docs/CASEBOOK.md 阅读版.html

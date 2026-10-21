@@ -4,60 +4,91 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173d35">
-  <meta name="description" content="退休之前，先给自己留一条工作退路。用本地停工缓冲计算器，算清休息、换岗与半退休的现金准备；从六个真实生活问题开始。">
-  <meta property="og:title" content="退休之前｜先给自己留一条工作退路">
-  <meta property="og:description" content="不必等到攒够退休的钱，才开始为生活留余地。一个停工缓冲计算器，六个工作退路入口。">
+  <meta name="description" content="人生，不必等到退休才开始。把钱、工作、住房、保障与关系放到同一张生活地图里：可搜索的决策资料库、虚构案例对比、六份深度指南与本地现金缓冲计算器。">
+  <meta property="og:title" content="退休之前｜人生，不必等到退休才开始">
+  <meta property="og:description" content="从一个具体问题出发，读懂选择的代价，再试着走一小步。钱、工作、住房、保障和生活，都值得现在准备。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://retirement-before.supershen666.chatgpt.site/">
   <link rel="canonical" href="https://retirement-before.supershen666.chatgpt.site/">
-  <title>退休之前｜先给自己留一条工作退路</title>
+  <title>退休之前｜人生，不必等到退休才开始</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="calculator.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="library-data.js" defer></script>
+  <script src="library.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header wrap">
-    <a class="brand" href="index.html" aria-label="退休之前首页"><span class="brand-mark" aria-hidden="true">退<span></span></span><span>退休之前<small>RETIREMENT GUIDE</small></span></a>
-    <nav aria-label="主导航"><a href="#calculator">算一算</a><a href="#start">找退路</a><a href="book/QUICKSTART.html">读指南</a><a class="nav-source" href="book/README.html">完整目录 <span aria-hidden="true">↗</span></a></nav>
+    <a class="brand" href="index.html" aria-label="退休之前首页"><span class="brand-mark" aria-hidden="true">退<span></span></span><span>退休之前<small>A FIELD GUIDE TO LIFE</small></span></a>
+    <nav aria-label="主导航"><a href="#library">资料库</a><a href="#cases">看案例</a><a href="#calculator">算一算</a><a class="nav-source" href="#chapters">完整手册 <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="small-rule"></span> 普通人的工作退路指南</p>
-        <h1 id="hero-title">先给自己留一条<br><em>工作退路。</em></h1>
-        <p class="hero-description">不必等到攒够退休的钱，才开始为生活留余地。<br class="wide-only">从一次休息、一次换岗，到逐渐减少对工资的依赖，<br class="wide-only">先把眼前这一步算清楚。</p>
-        <div class="hero-actions"><a class="button button-primary" href="#calculator">算算我的停工缓冲 <span aria-hidden="true">↗</span></a><a class="text-link" href="#start">从我的处境开始 <span aria-hidden="true">↓</span></a></div>
-        <p class="hero-note">无需登录 · 数据留在本页 · 免费使用</p>
+        <p class="eyebrow"><span class="small-rule"></span> 给普通人的另一种生活提案</p>
+        <h1 id="hero-title">人生，不必等到<br><em>退休才开始。</em></h1>
+        <p class="hero-description">想休息、换工作，还是少上几天班？<br>把钱、住房、保障和关系一起想清楚。<span class="wide-only"><br>不急着做一个大决定，先找到值得试的一小步。</span></p>
+        <form id="hero-search-form" class="hero-search" role="search" aria-label="搜索生活决策">
+          <label for="hero-search" class="sr-only">你正在考虑什么</label><span class="search-symbol" aria-hidden="true">⌕</span><input id="hero-search" type="search" placeholder="试试：房贷、兼职、医保、搬家" maxlength="100" autocomplete="off"><button type="submit">找答案 <span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="search-suggestions" aria-label="热门问题"><span>从这里开始</span><button type="button" data-search="休息">休息一下</button><button type="button" data-search="收入">收入中断</button><button type="button" data-search="家庭">有家要顾</button></div>
+        <p class="hero-note">无需登录 · 免费阅读 · 财务输入留在本页</p>
+        <a class="lifetime-entry" href="lifetime.html"><span>长期工具</span><strong>退休现金流实验台 · 比较养老金桥接与首次缺口</strong><span aria-hidden="true">↗</span></a>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-margin">给未来的自己 / 一份选择权</div>
-        <svg viewBox="0 0 420 345" role="presentation">
-          <defs><pattern id="paper-lines" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M 36 0 L 0 0 0 36" fill="none" stroke="#173d35" stroke-opacity=".07" stroke-width="1"/></pattern></defs>
-          <rect x="7" y="7" width="406" height="331" rx="2" fill="url(#paper-lines)"/>
-          <path d="M38 289 H382" stroke="#173d35" stroke-width="1"/>
-          <path d="M55 286 V243 H142 V190 H229 V126 H316 V55 H367" fill="none" stroke="#173d35" stroke-width="3"/>
-          <path d="M52 276 V245 H142 V190 H229 V126 H316 V55 H366 V289 H52Z" fill="#d6ded0" fill-opacity=".65"/>
-          <path d="M55 286 V243 H142 V190 H229 V126 H316 V55 H367" fill="none" stroke="#173d35" stroke-width="3"/>
-          <circle cx="142" cy="190" r="6" fill="#b95732"/>
-          <circle cx="229" cy="126" r="5" fill="#173d35"/>
-          <circle cx="316" cy="55" r="5" fill="#173d35"/>
-          <text x="50" y="315" font-size="13" fill="#5a655b">一点现金缓冲</text>
-          <text x="152" y="176" font-size="14" fill="#173d35">休息一下</text>
-          <text x="238" y="111" font-size="14" fill="#173d35">换种工作</text>
-          <text x="270" y="37" font-size="14" fill="#173d35">多些选择</text>
-          <path d="M62 74 h66 M62 86 h42" stroke="#b95732" stroke-width="2"/>
-          <text x="61" y="116" font-size="12" fill="#6c7267">从能做到的一步开始</text>
-        </svg>
-        <div class="art-caption"><span>退路，是一点点准备出来的。</span><span>01 — ∞</span></div>
+      <aside class="editors-desk" aria-labelledby="desk-title">
+        <div class="desk-heading"><p class="eyebrow">本期问题索引</p><span class="issue-mark">生活不只有一种解</span></div>
+        <h2 id="desk-title">你正在犹豫的，<br>也许这里有一个起点。</h2>
+        <div id="hero-questions" class="hero-questions">
+          <a href="guides/lighter-work.html"><span class="question-index">01</span><span><small>工作 × 时间</small><strong>降薪换轻松，怎样知道真的值得？</strong></span><span aria-hidden="true">↗</span></a>
+          <a href="guides/move-city.html"><span class="question-index">02</span><span><small>住房 × 生活</small><strong>换个便宜的城市，为什么可能没省下钱？</strong></span><span aria-hidden="true">↗</span></a>
+          <a href="book/05-policy.html"><span class="question-index">03</span><span><small>保障 × 退路</small><strong>离开单位以后，医保与养老要分别查什么？</strong></span><span aria-hidden="true">↗</span></a>
+        </div>
+        <a class="desk-footer" href="#library">带着问题读，比从第一页读更容易 <span aria-hidden="true">↓</span></a>
+      </aside>
+    </section>
+    <div class="overview-strip wrap" aria-label="本站内容概览"><p><strong data-library-count>—</strong><span>个具体决策问题</span></p><p><strong data-case-count>—</strong><span>种虚构处境对比</span></p><p><strong>06</strong><span>份深度行动指南</span></p><p><strong>12</strong><span>章完整生活手册</span></p><a href="book/SOURCES.html">查看来源与适用边界 <span aria-hidden="true">↗</span></a></div>
+
+    <section id="library" class="library-section wrap" aria-labelledby="library-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / 每个问题，拆成一个能做的动作</p><h2 id="library-title">生活决策资料库<span class="title-dot">.</span></h2></div><p>读原因、看例子、辨边界。<br>从一个问题，走到你的下一步。</p></div>
+      <div class="library-layout">
+        <aside class="library-margin"><p class="margin-label">先找到你在意的那一块</p><p class="margin-intro">钱能撑多久，<br>工作值多少时间，<br>家要安放在哪里。<br><em>答案之间，彼此相连。</em></p><div class="margin-note"><strong>怎么用这份资料库</strong><ol><li>选一个正在困扰你的问题</li><li>展开，读完动作与限制</li><li>用自己的账本检验例子</li></ol></div><p class="source-note">原创方法、政策原文、研究解读分别标示。政策办理请按条目所列日期与适用地区，再核实当地最新规则。</p><a class="text-link" href="book/SOURCES.html">来源登记 <span aria-hidden="true">↗</span></a></aside>
+        <div class="library-main">
+          <div class="library-search"><label for="library-search" class="sr-only">搜索全部决策问题</label><span class="search-symbol" aria-hidden="true">⌕</span><input id="library-search" type="search" placeholder="搜索问题、关键词或行动…" maxlength="100" autocomplete="off"><button type="button" id="clear-search" aria-label="清空搜索">清空</button></div>
+          <div id="category-tabs" class="category-tabs" role="tablist" aria-label="按主题筛选决策问题"></div>
+          <div class="results-toolbar"><p id="library-results" role="status" aria-live="polite">正在整理问题索引…</p><span>点击问题，展开细读 <span aria-hidden="true">＋</span></span></div>
+          <div id="decision-list" class="decision-list" role="tabpanel" tabindex="0" aria-label="决策问题列表"></div>
+          <div id="no-results" class="empty-state" hidden><h3>换一个词，也许就能找到入口。</h3><p>试试“现金”“兼职”“医保”或“父母”，也可以清除筛选，浏览全部问题。</p><button type="button" id="reset-library" class="button">浏览全部问题</button></div>
+          <button type="button" id="show-all-decisions" class="show-more" hidden></button>
+          <noscript><p class="notice">搜索与展开资料库需要 JavaScript。你仍可直接阅读下面的深度指南、十二章手册和完整阅读版。</p></noscript>
+        </div>
       </div>
     </section>
 
+    <section id="start" class="guides-section" aria-labelledby="scenarios-title"><div class="wrap guides-layout">
+      <div class="guide-intro"><p class="eyebrow">02 / 一份指南，走过一段完整的路</p><h2 id="scenarios-title">六种生活分岔，<br>先走一小段。</h2><p>有些问题需要把账本、保障和人的感受放在一起。六份深度指南，从准备走到试行，也留好回头的路。</p><a class="text-link" href="book/QUICKSTART.html">第一次来？先读三分钟入门 <span aria-hidden="true">↗</span></a><div class="guide-quote"><span aria-hidden="true">“</span><p>为未来留余地，<br>也给现在留生活。</p><small>不需要等一切准备完美。</small></div></div>
+      <ol class="guide-index">
+        <li><a href="guides/rest.html"><span class="guide-number">01</span><span><small>想停一下</small><h3>我想休息三个月，要准备什么？</h3><p>把现金、保障和回岗时间放到一张准备单。</p></span><span class="guide-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="guides/savings.html"><span class="guide-number">02</span><span><small>存款还不多</small><h3>只有 5 万、10 万、30 万，分别能做什么？</h3><p>分清应急缓冲、短期试验和长期本金。</p></span><span class="guide-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="guides/lighter-work.html"><span class="guide-number">03</span><span><small>想换种工作</small><h3>降薪换轻松，这笔账怎么算？</h3><p>把收入缺口、通勤时间和工作强度摆在一起。</p></span><span class="guide-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="guides/part-time.html"><span class="guide-number">04</span><span><small>想少上点班</small><h3>靠兼职半退休，收入断了怎么办？</h3><p>演练有收入、少收入、零收入三个版本。</p></span><span class="guide-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="guides/move-city.html"><span class="guide-number">05</span><span><small>想换个地方</small><h3>搬去便宜的城市，真的更省钱吗？</h3><p>算进搬家、探亲、医疗和重新找工作的成本。</p></span><span class="guide-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="guides/family.html"><span class="guide-number">06</span><span><small>有家要顾</small><h3>房贷、孩子、父母，先补哪一块？</h3><p>一份共同责任账本，一次家庭讨论的起点。</p></span><span class="guide-arrow" aria-hidden="true">↗</span></a></li>
+      </ol>
+    </div></section>
+
+    <section id="cases" class="cases-section wrap" aria-labelledby="cases-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / 数字相似，生活可以很不一样</p><h2 id="cases-title">把不同处境，放在一起看。</h2></div><p>全部为虚构案例，同一个月现金模型复算。<br>看哪些条件改变了选择，再带入自己的数字。</p></div>
+      <div class="cases-toolbar"><div class="case-filters" role="group" aria-label="筛选案例"><button type="button" data-case-filter="all" aria-pressed="true">全部处境</button><button type="button" data-case-filter="zero" aria-pressed="false">无阶段收入</button><button type="button" data-case-filter="income" aria-pressed="false">有限期收入</button></div><p id="case-results" role="status" aria-live="polite"></p></div>
+      <div id="case-list" class="case-list"></div><button type="button" id="show-all-cases" class="show-more" hidden></button><p id="case-applied-status" class="case-applied-status" role="status" aria-live="polite"></p>
+      <p class="model-note">案例只比较固定月现金流；不计投资回报、通胀和月内到账先后。首次缺口不会被后续正余额抵消；预留不能重复用于日常支出。它们帮助看懂差异，不能作为辞职或退休结论。</p>
+    </section>
     <section class="calculator-section" id="calculator" aria-labelledby="calculator-title">
       <div class="wrap">
-        <div class="section-heading"><div><p class="eyebrow">01 / 先把账算清楚</p><h2 id="calculator-title">如果暂时没有工资，<br class="mobile-only">我能撑多久？</h2></div><p>花几分钟，算清一段休息的现金准备。<br>这里计算短期缓冲，不判断能否辞职或退休。</p></div>
-        <noscript><p class="notice">计算器需要启用 JavaScript。仍可阅读下面的六个场景和完整指南。</p></noscript>
+        <nav class="tool-route" aria-label="选择测算工具"><a href="#calculator" aria-current="true">停工缓冲 <span>眼前几个月</span></a><a href="lifetime.html">退休现金流实验台 <span>比较长期首次缺口 ↗</span></a></nav>
+        <div class="section-heading"><div><p class="eyebrow">04 / 把你的数字放进来</p><h2 id="calculator-title">如果暂时没有工资，<br class="mobile-only">我能撑多久？</h2></div><p>花几分钟，算清一段休息的现金准备。<br>这里计算短期缓冲，不判断能否辞职或退休。</p></div>
+        <noscript><p class="notice">计算器需要启用 JavaScript。仍可阅读六份专题指南和完整手册。</p></noscript>
         <div class="calculator-shell">
           <form id="runway-form" class="calculator-inputs" novalidate>
             <div class="form-intro"><span id="example-badge" class="tag">示例数字</span><span>金额均为人民币元，请换成你的情况。</span></div>
@@ -70,9 +101,9 @@
               <div class="field"><label for="monthlyCoverage">额外保障缴费 <span>元/月</span></label><input id="monthlyCoverage" name="monthlyCoverage" type="number" inputmode="decimal" min="0" max="1000000000" step="0.01" value="600" aria-describedby="coverage-hint monthlyCoverage-error"><small id="coverage-hint">另需支付的社保、医保、保险等；没有则填 0。</small><small class="field-error" id="monthlyCoverage-error"></small></div>
             </div></fieldset>
             <fieldset><legend>给休息加一个期限</legend><div class="field-grid three-fields">
-              <div class="field"><label for="plannedMonths">计划休息 <span>个月</span></label><input id="plannedMonths" name="plannedMonths" type="number" inputmode="numeric" min="1" max="600" step="1" value="3" aria-describedby="plannedMonths-error"><small>填 1–600 的整数。</small><small class="field-error" id="plannedMonths-error"></small></div>
-              <div class="field"><label for="monthlyIncome">兼职净收入 <span>元/月</span></label><input id="monthlyIncome" name="monthlyIncome" type="number" inputmode="decimal" min="0" max="1000000000" step="0.01" value="1500" aria-describedby="income-hint monthlyIncome-error"><small id="income-hint">仅填已确认可获得的收入，没有则填 0。</small><small class="field-error" id="monthlyIncome-error"></small></div>
-              <div class="field"><label for="incomeMonths">兼职持续 <span>个月</span></label><input id="incomeMonths" name="incomeMonths" type="number" inputmode="numeric" min="0" max="600" step="1" value="3" aria-describedby="incomeMonths-error"><small>从第 1 个月起，结束后按零收入。</small><small class="field-error" id="incomeMonths-error"></small></div>
+              <div class="field"><label for="plannedMonths">对照期间 <span>个月</span></label><input id="plannedMonths" name="plannedMonths" type="number" inputmode="numeric" min="1" max="600" step="1" value="3" aria-describedby="plannedMonths-error"><small>填 1–600 的整数。</small><small class="field-error" id="plannedMonths-error"></small></div>
+              <div class="field"><label for="monthlyIncome">阶段净收入 <span>元/月</span></label><input id="monthlyIncome" name="monthlyIncome" type="number" inputmode="decimal" min="0" max="1000000000" step="0.01" value="1500" aria-describedby="income-hint monthlyIncome-error"><small id="income-hint">仅填已确认可获得的收入，没有则填 0。</small><small class="field-error" id="monthlyIncome-error"></small></div>
+              <div class="field"><label for="incomeMonths">收入持续 <span>个月</span></label><input id="incomeMonths" name="incomeMonths" type="number" inputmode="numeric" min="0" max="600" step="1" value="3" aria-describedby="incomeMonths-error"><small>从第 1 个月起，结束后按零收入。</small><small class="field-error" id="incomeMonths-error"></small></div>
             </div></fieldset>
             <div class="input-footer"><p>改数字，即时重算。网页不自动保存或上传输入。</p><button type="button" class="button-reset" id="reset-example">恢复示例</button></div>
             <p class="input-mapping">从场景照填时：现金填扣预留前的总额；大额预留与启动费合并只扣一次。月总支出若已含保障，请拆开填，或将额外保障填 0。</p>
@@ -84,12 +115,12 @@
               <p class="runway-value"><strong id="runway-number">8</strong><span id="runway-unit">个完整月</span></p>
               <p id="runway-detail" class="runway-detail">正在计算…</p>
               <div id="result-status" class="plan-result" role="status" aria-live="polite" aria-atomic="true"></div>
-              <div class="income-result"><span>加上有限期兼职</span><strong id="income-runway"></strong><small id="income-detail"></small></div>
+              <div class="income-result"><span>加上有限期收入</span><strong id="income-runway"></strong><small id="income-detail"></small></div>
               <div class="chart-head"><h3>每月现金差额</h3><span id="chart-horizon"></span></div>
-              <div class="chart-legend"><span><i class="line-key baseline-key"></i>零收入</span><span><i class="line-key income-key"></i>有限期兼职</span></div>
+              <div class="chart-legend"><span><i class="line-key baseline-key"></i>零收入</span><span><i class="line-key income-key"></i>有限期收入</span></div>
               <div id="cash-chart" class="cash-chart"></div>
               <p class="chart-note">已扣一次性预留；负数表示需要补足的金额。</p>
-              <table class="checkpoint-table"><caption class="sr-only">3、6、12 个月后的现金差额</caption><thead><tr><th scope="col">经过</th><th scope="col">零收入</th><th scope="col">有限期兼职</th></tr></thead><tbody id="checkpoints"></tbody></table>
+              <table class="checkpoint-table"><caption class="sr-only">3、6、12 个月后的现金差额</caption><thead><tr><th scope="col">经过</th><th scope="col">零收入</th><th scope="col">有限期收入</th></tr></thead><tbody id="checkpoints"></tbody></table>
               <p id="history-warning" class="history-warning" hidden></p>
               <button type="button" class="button button-copy" id="copy-result">复制这份测算</button>
               <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
@@ -97,25 +128,29 @@
             </div>
           </div>
         </div>
-        <details class="calculation-details"><summary>这些数字怎么算？有哪些没算？</summary><div class="details-grid"><div><h3>先分开预留，再逐月计算</h3><p>起始可花现金 = 可动用现金 − 一次性预留。每月现金差额 = 上月差额 + 当月收入 − 日常必要开销 − 额外保障缴费。兼职只在第 1 个月至指定结束月计入；零收入情景始终不计收入。</p><p>余额恰好为 0 的当月仍算完整覆盖；首次小于 0 的月份记为首次缺口。小数月仅按该月净消耗线性折算，不代表能付到某一天。一次性预留超过现金时，起点就存在缺口，后续收入不能抹掉这段历史。</p></div><div><h3>它只是一张短期现金草稿</h3><p>金额按当前输入逐月不变，不计投资收益、通胀、借款或新发生的大额支出。到账与付款按月合并，无法识别“月初先付房租、月底才到账”的月内缺口。最多检查 600 个月，期间未耗尽也不代表可以无限休息。</p><p>有限期兼职结束后，后续月份全部按零收入计算。长期退休要另查通胀、养老与医保、照护、收入中断和职业退路；继续读 <a href="book/QUICKSTART.html">快速入门</a>。</p></div></div></details>
+        <details class="calculation-details"><summary>这些数字怎么算？有哪些没算？</summary><div class="details-grid"><div><h3>先分开预留，再逐月计算</h3><p>起始可花现金 = 可动用现金 − 一次性预留。每月现金差额 = 上月差额 + 当月收入 − 日常必要开销 − 额外保障缴费。兼职只在第 1 个月至指定结束月计入；零收入情景始终不计收入。</p><p>余额恰好为 0 的当月仍算完整覆盖；首次小于 0 的月份记为首次缺口。小数月仅按该月净消耗线性折算，不代表能付到某一天。一次性预留超过现金时，起点就存在缺口，后续收入不能抹掉这段历史。</p></div><div><h3>它只是一张短期现金草稿</h3><p>金额按当前输入逐月不变，不计投资收益、通胀、借款或新发生的大额支出。到账与付款按月合并，无法识别“月初先付房租、月底才到账”的月内缺口。最多检查 600 个月，期间未耗尽也不代表可以无限休息。</p><p>有限期收入结束后，后续月份全部按零收入计算。长期退休要另查通胀、养老与医保、照护、收入中断和职业退路；继续读 <a href="book/QUICKSTART.html">快速入门</a>。</p></div></div></details>
       </div>
     </section>
 
-    <section id="start" class="scenarios-section wrap" aria-labelledby="scenarios-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / 从你正在经历的事开始</p><h2 id="scenarios-title">你现在想要的，<br class="mobile-only">是哪一种退路？</h2></div><p>不用先读完一本书。<br>选一个问题，做一个能落地的小动作。</p></div>
-      <div class="scenario-grid">
-        <a class="scenario" href="guides/rest.html"><span class="scenario-number">01 / 想停一下</span><h3>我想休息三个月，<br>要准备什么？</h3><p>现金、保障、回岗时间。给休息一个可以复盘的边界。</p><span class="scenario-bottom">先做一张休息准备单 <span aria-hidden="true">↗</span></span></a>
-        <a class="scenario" href="guides/savings.html"><span class="scenario-number">02 / 存款还不多</span><h3>只有 5 万、10 万、30 万，<br>分别能做什么？</h3><p>从眼前的现金缓冲开始，为下一次选择多留一点空间。</p><span class="scenario-bottom">找到自己的起点 <span aria-hidden="true">↗</span></span></a>
-        <a class="scenario" href="guides/lighter-work.html"><span class="scenario-number">03 / 想换种工作</span><h3>降薪换轻松，<br>这笔账怎么算？</h3><p>收入少多少、时间多多少，以及“更轻松”要如何验证。</p><span class="scenario-bottom">比较两份生活账 <span aria-hidden="true">↗</span></span></a>
-        <a class="scenario" href="guides/part-time.html"><span class="scenario-number">04 / 想少上点班</span><h3>靠兼职半退休，<br>收入断了怎么办？</h3><p>同时看有收入与零收入，给不稳定的机会留一条退路。</p><span class="scenario-bottom">先演练收入中断 <span aria-hidden="true">↗</span></span></a>
-        <a class="scenario" href="guides/move-city.html"><span class="scenario-number">05 / 想换个地方</span><h3>搬去便宜的城市，<br>真的更省钱吗？</h3><p>把搬家、回家、医疗和重新找工作的成本一起放进来。</p><span class="scenario-bottom">先试住，再决定 <span aria-hidden="true">↗</span></span></a>
-        <a class="scenario" href="guides/family.html"><span class="scenario-number">06 / 有家要顾</span><h3>房贷、孩子、父母，<br>先补哪一块？</h3><p>把全家的刚性支出和照护安排，写进同一份计划。</p><span class="scenario-bottom">开一次家庭会议 <span aria-hidden="true">↗</span></span></a>
-      </div>
+    <section id="chapters" class="chapters-section wrap" aria-labelledby="chapters-title">
+      <div class="section-heading"><div><p class="eyebrow">05 / 把零散的问题，连成一份自己的计划</p><h2 id="chapters-title">一本可以慢慢读的生活手册。</h2></div><a class="text-link" href="reader.html">打开完整阅读版 <span aria-hidden="true">↗</span></a></div>
+      <div class="chapters-layout"><div class="book-note"><span class="book-label">退休之前 / THE FIELD GUIDE</span><h3>从“我想过怎样的生活”<br>到“我现在能做什么”。</h3><p>离开全职工作、经济上不依赖工资、领取养老金，是三件不同的事。十二章，从目标、账本走到风险与日常。</p><a class="button button-primary" href="book/QUICKSTART.html">从快速入门开始 <span aria-hidden="true">↗</span></a><a class="text-link" href="book/README.html">全部文档与模板 <span aria-hidden="true">↗</span></a></div><ol class="chapter-index">
+        <li><a href="book/01-purpose.html"><span>01</span><div><strong>为什么准备退休</strong><small>先知道自己想获得什么</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/02-paths.html"><span>02</span><div><strong>选择你的路径</strong><small>休息、换岗、半退休怎么选</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/03-budget.html"><span>03</span><div><strong>先做一份真实账本</strong><small>哪些钱能花，哪些不能重复算</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/04-cashflow.html"><span>04</span><div><strong>退休现金流怎么计算</strong><small>桥接期、通胀与提取率</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/05-policy.html"><span>05</span><div><strong>中国大陆政策导航</strong><small>养老、医保与个人养老金</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/06-risk.html"><span>06</span><div><strong>让计划承受坏消息</strong><small>收入中断、市场下跌与照护</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/07-family.html"><span>07</span><div><strong>家庭、住房与照护</strong><small>把共同责任放进计划</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/08-work.html"><span>08</span><div><strong>工作与再就业</strong><small>保留技能、收入与职业退路</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/09-life.html"><span>09</span><div><strong>生活、健康与身份</strong><small>没有绩效和头衔，一周怎么过</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/10-action.html"><span>10</span><div><strong>30 天行动与年度复盘</strong><small>开始试行，按变化调整</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/11-cases.html"><span>11</span><div><strong>虚构案例与测算</strong><small>看见不同起点的不同选择</small></div><span aria-hidden="true">↗</span></a></li>
+        <li><a href="book/12-faq.html"><span>12</span><div><strong>常见误区</strong><small>存款、房产与“4%法则”的边界</small></div><span aria-hidden="true">↗</span></a></li>
+      </ol></div>
     </section>
-
-    <section class="reading-section wrap" aria-labelledby="reading-title"><div class="reading-inner"><div><p class="eyebrow">03 / 想把这件事想得更远</p><h2 id="reading-title">退休之前，<br>还有很多事可以现在开始。</h2><p>离开全职工作、经济上不依赖工资、领取养老金，是三件不同的事。完整指南用账本、政策导航、风险情景和生活实验，陪你慢慢分清。</p><a class="button button-primary" href="book/QUICKSTART.html">读一份快速入门 <span aria-hidden="true">↗</span></a></div><ol class="reading-list"><li><a href="book/01-purpose.html"><span>01</span> 我们为什么要准备退休 <span aria-hidden="true">↗</span></a></li><li><a href="book/03-budget.html"><span>03</span> 先做一份真实的家庭账本 <span aria-hidden="true">↗</span></a></li><li><a href="book/05-policy.html"><span>05</span> 分清养老、医保与政策条件 <span aria-hidden="true">↗</span></a></li><li><a href="book/09-life.html"><span>09</span> 没有绩效和头衔，一周怎么过 <span aria-hidden="true">↗</span></a></li><li><a href="book/10-action.html"><span>10</span> 从 30 天行动开始 <span aria-hidden="true">↗</span></a></li></ol></div></section>
-    <section class="contribute wrap"><p class="eyebrow">一份慢慢长出来的公共指南</p><h2>你的试错，也能成为别人的退路。</h2><p>欢迎带来计算反例、可核实的政策更新、匿名的真实经历。<br class="wide-only">一次休息后的回岗、一次没有更轻松的换岗，都值得被记录。</p><a class="text-link" href="book/CONTRIBUTING.html">参与完善这份指南 <span aria-hidden="true">↗</span></a></section>
+    <section class="contribute wrap"><div><p class="eyebrow">一份慢慢长出来的公共指南</p><h2>你的试错，也能成为别人的退路。</h2><p>一次休息后的回岗，一次没有更轻松的换岗，都值得被记录。欢迎带来计算反例、可核实的政策更新和获授权的匿名经历。</p></div><a class="text-link" href="book/CONTRIBUTING.html">参与完善 <span aria-hidden="true">↗</span></a></section>
   </main>
-  <footer class="site-footer wrap"><p><strong>退休之前</strong><span>先给自己留一条工作退路。</span></p><p>教育性工具 · 不推荐金融产品 · 不收集财务输入<br><a href="book/README.html">全部目录</a> <span aria-hidden="true">/</span> <a href="reader.html">完整阅读版</a> <span aria-hidden="true">/</span> <a href="book/CONTRIBUTING.html">参与完善</a> <span aria-hidden="true">/</span> <a href="book/LICENSE.html">MIT License</a></p></footer>
+  <footer class="site-footer wrap"><p><strong>退休之前</strong><span>为未来留余地，也给现在留生活。</span></p><p>教育性信息 · 不推荐金融产品 · 不收集财务输入<br><a href="book/README.html">全部目录</a> <span aria-hidden="true">/</span> <a href="reader.html">完整阅读版</a> <span aria-hidden="true">/</span> <a href="book/SOURCES.html">来源与边界</a> <span aria-hidden="true">/</span> <a href="book/LICENSE.html">MIT License</a></p></footer>
 </body>
 </html>

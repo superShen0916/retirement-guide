@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGE = ROOT / '.deploy' / 'retirement-before'
-DIRECTORIES = ('site', 'assets', 'docs', 'templates', 'examples', 'tools', 'tests', '.github', 'dist')
+DIRECTORIES = ('site', 'assets', 'data', 'docs', 'templates', 'examples', 'tools', 'tests', '.github', 'dist')
 FILES = ('README.md', 'CONTRIBUTING.md', 'RELEASE.md', 'CHANGELOG.md', 'LICENSE', 'VALIDATION.md', '.gitignore', '阅读版.html')
 
 

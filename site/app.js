@@ -49,7 +49,7 @@
     var svg = document.createElementNS(svgNS, 'svg');
     svg.setAttribute('viewBox', '0 0 362 164');
     svg.setAttribute('role', 'img');
-    svg.setAttribute('aria-label', '前 ' + horizon + ' 个月的现金差额。零收入与有限期兼职情景；3、6、12 个月准确金额见下表。');
+    svg.setAttribute('aria-label', '前 ' + horizon + ' 个月的现金差额。零收入与有限期收入情景；3、6、12 个月准确金额见下表。');
     function element(name, attrs, text) {
       var node = document.createElementNS(svgNS, name);
       Object.keys(attrs).forEach(function (key) { node.setAttribute(key, attrs[key]); });
@@ -93,7 +93,7 @@
     byId('runway-detail').textContent = detailText(baseline);
     var status = byId('result-status');
     status.replaceChildren();
-    appendText(status, 'span', '计划休息 ' + result.input.plannedMonths + ' 个月，零收入时：');
+    appendText(status, 'span', '计划比较 ' + result.input.plannedMonths + ' 个月，零收入时：');
     appendText(status, 'strong', balanceText(baseline.plannedBalance), baseline.planHasShortfall ? 'negative' : '');
     appendText(status, 'br', '');
     appendText(status, 'span', '扣预留后可花 ' + money(result.availableCash) + '；每月必要支出 ' + money(result.monthlyCost) + '。');
@@ -114,8 +114,8 @@
     var warning = byId('history-warning');
     var messages = [];
     if (withIncome.planHasShortfall) {
-      messages.push(withIncome.firstShortfallMonth === 0 ? '兼职情景起点也存在预留缺口。' :
-        '兼职情景首次缺口在第 ' + withIncome.firstShortfallMonth + ' 个月。');
+      messages.push(withIncome.firstShortfallMonth === 0 ? '阶段收入情景起点也存在预留缺口。' :
+        '阶段收入情景首次缺口在第 ' + withIncome.firstShortfallMonth + ' 个月。');
     }
     if (baseline.firstShortfallMonth === 0 && withIncome.plannedBalance >= 0) {
       messages.push('后续收入使期末差额回正，也没有消除起点的预留缺口。');
@@ -149,13 +149,13 @@
       '可动用现金：' + money(i.cash) + '；一次性预留：' + money(i.reserve),
       '扣预留后可花：' + money(result.availableCash),
       '日常必要开销：' + money(i.monthlyExpenses) + '/月；额外保障缴费：' + money(i.monthlyCoverage) + '/月',
-      '计划休息：' + i.plannedMonths + ' 个月',
+      '计划比较：' + i.plannedMonths + ' 个月',
       '零收入：' + runwayText(result.baseline) + '。' + detailText(result.baseline),
       '零收入计划期末：' + balanceText(result.baseline.plannedBalance),
-      '有限期兼职：' + money(i.monthlyIncome) + '/月，持续 ' + i.incomeMonths + ' 个月（从第 1 个月起）',
-      '兼职情景：' + runwayText(result.withIncome) + '。' + detailText(result.withIncome),
-      '兼职情景计划期末：' + balanceText(result.withIncome.plannedBalance),
-      '检查点（零收入 / 有限期兼职）：'].concat(result.checkpoints.map(function (point) {
+      '有限期收入：' + money(i.monthlyIncome) + '/月，持续 ' + i.incomeMonths + ' 个月（从第 1 个月起）',
+      '阶段收入情景：' + runwayText(result.withIncome) + '。' + detailText(result.withIncome),
+      '阶段收入情景计划期末：' + balanceText(result.withIncome.plannedBalance),
+      '检查点（零收入 / 有限期收入）：'].concat(result.checkpoints.map(function (point) {
         return point.month + ' 个月：' + balanceText(result.baseline.balances[point.month]) + ' / ' + balanceText(result.withIncome.balances[point.month]);
       }), ['金额单位：人民币元。只按月合并现金流，不含投资收益、通胀或借款，不检测月内付款与到账缺口。',
         '早期缺口不会被后期正余额抵消；这份草稿不判断能否辞职或退休。',

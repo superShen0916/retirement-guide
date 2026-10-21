@@ -38,7 +38,7 @@ class SiteBuildTests(unittest.TestCase):
         self.assertNotIn('LIVE_SITE_LINK', content)
         for url in graph.urls:
             if url.startswith('#') and len(url) > 1:
-                self.assertIn(unquote(url[1:]), graph.ids, url)
+                self.assertTrue(unquote(url[1:]) in graph.ids, 'Missing reader anchor: ' + url)
             self.assertFalse(url.endswith('.md'), url)
 
     def test_website_internal_links_and_fragments_work_without_server(self):
@@ -59,8 +59,8 @@ class SiteBuildTests(unittest.TestCase):
                     target = (page.parent / unquote(parsed.path)).resolve() if parsed.path else page
                     self.assertTrue(target.is_file(), str(page.relative_to(destination)) + ': ' + url)
                     if parsed.fragment and target in pages:
-                        self.assertIn(unquote(parsed.fragment), pages[target].ids,
-                                      str(page.relative_to(destination)) + ': ' + url)
+                        self.assertTrue(unquote(parsed.fragment) in pages[target].ids,
+                                        str(page.relative_to(destination)) + ': ' + url)
             home = (destination / 'index.html').read_text(encoding='utf-8')
             self.assertNotIn('type="module"', home)
             for scenario in build_reader.SCENARIOS:

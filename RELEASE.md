@@ -4,16 +4,17 @@
 
 ## 更新内容与网页
 
-日常内容改 `docs/`、`templates/`、README；首页与月度计算器改 `site/`。六篇场景位于 `docs/scenarios/`，不要直接改 `dist/` 里生成的网页。
+日常内容改 `docs/`、`templates/`、README；决策条目和虚构账本改 `data/`。`docs/LIBRARY.md`与`docs/CASEBOOK.md`由`tools/build_library.py`生成，不直接编辑。首页、月度及年度计算器改 `site/`；六篇场景位于 `docs/scenarios/`，不要直接改 `dist/` 里生成的网页。
 
 PowerShell / Bash 在仓库根目录运行相同命令，需要 Python 3.10+；月度模型测试另需 Node.js 22+，没有 npm 依赖。
 
 ```bash
 python tools/build_cases.py
+python tools/build_library.py
 python tools/build_reader.py
 python tools/build_site.py
 python -m unittest discover -s tests -v
-node --test tests/test_runway.mjs
+node --test tests/test_runway.mjs tests/test_lifetime.mjs
 python tools/check_links.py
 ```
 

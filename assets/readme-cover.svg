@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
-  <title id="title">退休之前：普通人的工作退路指南</title>
+  <title id="title">退休之前：把钱、时间和生活一起算清楚</title>
   <desc id="desc">为未来留余地，也给现在留生活。休息一阵、换种工作、慢慢退出，先把下一步算清楚。</desc>
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -16,10 +16,10 @@
     <path d="M62 64h31" stroke="#D9EBAE" stroke-width="4"/>
     <text x="109" y="70" fill="#B9D3C7" font-size="15" letter-spacing="3">RETIREMENT GUIDE</text>
     <text x="60" y="166" fill="#FFFDF4" font-size="66" font-weight="700" letter-spacing="3">退休之前</text>
-    <text x="62" y="223" fill="#D9EBAE" font-size="28" font-weight="600">普通人的工作退路指南</text>
+    <text x="62" y="223" fill="#D9EBAE" font-size="28" font-weight="600">把钱、时间和生活一起算清楚</text>
     <text x="63" y="281" fill="#E3EAE2" font-size="21">为未来留余地，也给现在留生活。</text>
     <path d="M63 316h545" stroke="#B8D1C2" stroke-opacity=".25"/>
-    <text x="63" y="359" fill="#B9D3C7" font-size="17">算清缓冲 · 比较选择 · 先试一小步</text>
+    <text x="63" y="359" fill="#B9D3C7" font-size="17">决策资料库 · 长期实验台 · 生活案例</text>
     <g transform="translate(750 60)">
       <path d="M55 264V72M55 130h48M55 224h48" fill="none" stroke="#789F8D" stroke-width="2"/>
       <circle cx="55" cy="72" r="7" fill="#D9EBAE"/>

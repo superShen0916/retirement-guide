@@ -10,6 +10,7 @@ from urllib.parse import quote, unquote, urlparse
 
 from build_reader import PAGES, ROOT, SCENARIOS
 from reader_markdown import render
+from build_library import load as load_library
 
 ORIGIN = 'https://retirement-before.supershen666.chatgpt.site'
 ROUTES = {}
@@ -88,6 +89,11 @@ def build(destination):
     if destination == ROOT or destination in ROOT.parents:
         raise ValueError('构建目录不能覆盖项目或其父目录')
     destination.mkdir(parents=True, exist_ok=True)
+    library = load_library()
+    for item in library['items'] + library['cases']:
+        item['readMore'] = ROUTES[(ROOT / item['readMore']).resolve()]
+    library['lifetimeCases'] = [json.loads((ROOT / 'examples' / (name + '.json')).read_text(encoding='utf-8')) for name in ['bridge', 'part-time', 'family']]
+    (destination / 'library-data.js').write_text('window.RETIREMENT_LIBRARY=' + json.dumps(library, ensure_ascii=False).replace('</', '<\\/') + ';\n', encoding='utf-8', newline='\n')
     for source in (ROOT / 'site').rglob('*'):
         if source.is_file() and not source.is_symlink() and source.suffix in ('.html', '.css', '.js', '.svg', '.json', '.webmanifest'):
             target = destination / source.relative_to(ROOT / 'site')
@@ -112,8 +118,9 @@ def build(destination):
     (destination / 'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                                            + ''.join('<url><loc>' + ORIGIN + '/' + route + '</loc></url>' for route in urls)
                                            + '</urlset>', encoding='utf-8')
-    (destination / 'build-info.json').write_text(json.dumps({'version': '0.3.0', 'content_updated': '2026-10-21',
-        'policy_source_review': '2026-10-12', 'scenario_pages': 6, 'reading_pages': len(ROUTES)}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (destination / 'build-info.json').write_text(json.dumps({'version': '0.4.0', 'content_updated': '2026-10-21',
+        'original_source_review': '2026-10-12', 'new_evidence_review': '2026-10-21', 'decision_items': len(library['items']),
+        'fictional_cases': len(library['cases']), 'scenario_pages': 6, 'reading_pages': len(ROUTES)}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print('Built website:', destination, '|', len(ROUTES), 'reading pages + calculator')
 
 

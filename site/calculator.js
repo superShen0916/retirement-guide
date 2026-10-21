@@ -10,7 +10,7 @@
   var LABELS = {
     cash: '可动用现金', monthlyExpenses: '每月日常必要开销',
     monthlyCoverage: '每月额外保障缴费', reserve: '一次性预留',
-    monthlyIncome: '兼职月收入', incomeMonths: '兼职持续月数', plannedMonths: '计划休息月数'
+    monthlyIncome: '阶段月收入', incomeMonths: '收入持续月数', plannedMonths: '对照月数'
   };
   var EXAMPLE = Object.freeze({cash: 60000, monthlyExpenses: 5000, monthlyCoverage: 600,
     reserve: 10000, monthlyIncome: 1500, incomeMonths: 3, plannedMonths: 3});
