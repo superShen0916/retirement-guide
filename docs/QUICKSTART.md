@@ -26,7 +26,7 @@
 2. 我愿意先尝试的可逆版本是：____。
 3. 出现____时，我会提前调整，而不是等现金用尽。
 
-不知道下一步读什么？从 [六个场景](../README.md#六个场景把一个决定讲完整) 里挑一个，或先看 [休息三个月要准备什么](scenarios/rest.md)。也可先在[决策资料库](LIBRARY.md)查一个问题，或打开[退休现金流实验台](https://retirement-before.supershen666.chatgpt.site/lifetime.html)比较长期路径。
+不知道下一步读什么？从 [七个场景](../README.md#七个场景把一个决定讲完整) 里挑一个，或先看 [休息三个月要准备什么](scenarios/rest.md)。也可先在[决策资料库](LIBRARY.md)查一个问题，或打开[退休现金流实验台](https://retirement-before.supershen666.chatgpt.site/lifetime.html)比较长期路径。
 
 ## 一个晚上：得到两条可比较的路径
 

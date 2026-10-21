@@ -79,7 +79,7 @@ def render_page(source, route):
             '<a href="' + directory + '">阅读目录</a></header><main><p class="eyebrow">工作退路指南 / '
             '内容更新 2026-10-21</p><article class="reading-paper">' + body + '</article>'
             '<aside class="reading-bottom"><a href="' + home + '#calculator">→ 用自己的数字算一次</a>'
-            '<a href="' + directory + '">完整目录</a><p>继续找与你有关的选择：</p><nav class="reading-related" aria-label="六个场景">'
+            '<a href="' + directory + '">完整目录</a><p>继续找与你有关的选择：</p><nav class="reading-related" aria-label="七个场景">'
             + related + '</nav><p>政策来源的核查范围与日期见来源登记；本页更新时间不代表全部政策重新核验。</p></aside>'
             '</main><footer class="reading-footer">为未来留余地，也给现在留生活。 · 无账户 · 无追踪</footer></body></html>')
 
